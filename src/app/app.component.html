@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>{{ title }}</h1>
+
+    <div class="row">
+
+        <div class="col s4" *ngFor = "let singer of singers, let singerIndex = index">
+            <div class="card">
+                <div class="card-content">
+                    <h5 class="card-title">
+                       {{ singerIndex+1 }}. {{ singer.name }}
+                    </h5>
+                    <section>
+                        <figure>
+                            <img src="{{ singer.image }}" [ngClass]="{thumbnail: true, shadow: true}"
+                                 [style.border] = " '1px solid' "
+                                [ngStyle] = "{border: singer.isIndian ? '5px solid red' : '1px solid red' }" />
+                        </figure>
+
+                        <input type="text" placeholder="Song" />
+
+                        <button class="btn"  (click)="onPlay(singer)">Play Music</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
