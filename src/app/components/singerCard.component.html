@@ -3,7 +3,7 @@
     <div class="card-head">
         <div [ngClass]="{ modalBackground : backingState }">
             <!--<figure [ngStyle]="{backgroundImage: 'url('.concat(singer.image).concat(')')} "></figure>-->
-            <image-preview  [singer]="singer" [ngClass]="{ modalImage : backingState }" (dblclick)="imagePreview($event)"></image-preview>
+            <image-preview [singer]="singer" [ngClass]="{ modalImage : backingState }" (dblclick)="imagePreview($event)"></image-preview>
             <!--<h5>{{singer.name}}</h5>-->
         </div>
 
