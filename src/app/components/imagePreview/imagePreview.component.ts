@@ -12,4 +12,7 @@ export default class ImagePreviewComponent {
     @Input()
     singer: SingerModel;
 
+    // constructor(private spinner: string) {
+    //     this.spinner = "../../../assets/spinner_holdings.gif";
+    // }
 }

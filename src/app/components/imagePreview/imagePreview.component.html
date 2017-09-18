@@ -1,2 +1,5 @@
-<figure [ngStyle]="{backgroundImage: 'url('.concat(singer.image).concat(')')} "></figure>
+<!--<figure [ngStyle]="{backgroundImage: 'url('.concat(singer.image).concat(')')} "></figure>-->
+<figure>
+    <img src="../../../assets/spinner_holdings.gif" alt="" [lazyLoad]="singer.image">
+</figure>
 <h5>{{singer.name}}</h5>

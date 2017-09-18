@@ -1,9 +1,11 @@
 figure
 {
-    padding-bottom: 55%;
+    /*padding-bottom: 55%;*/
     margin: 0;
-    background-size: cover;
-    background-position: center center;
+    /*background-size: cover;*/
+    /*background-position: center center;*/
+    padding: 30px;
+    padding-bottom: 0;
 }
 
 h5
