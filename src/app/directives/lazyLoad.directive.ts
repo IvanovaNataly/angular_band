@@ -18,7 +18,7 @@ export default class LazyLoadDirective {
         image.src = this.lazyLoad;
         image.addEventListener("load", event => {
             setTimeout(() => {
-
+                this.elementRef.nativeElement.src = image.src;
             }, 2000)
 
         })
