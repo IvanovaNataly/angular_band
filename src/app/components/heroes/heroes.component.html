@@ -1,0 +1,11 @@
+<ul id="slide-out">
+    <p>{{heroesList}}</p>
+    <a *ngFor="let heroe of heroesList"
+       [routerLink]="['/heroDetails', heroe.id]">
+        {{ heroe.id }}
+    </a>
+    <!--<li><a routerLink="/heroDetails/1">First Link With Icon</a></li>-->
+    <!--<li><a routerLink="/heroDetails/2">Second Link</a></li>-->
+    <!--<li><a routerLink="/heroDetails/3">Third Link</a></li>-->
+</ul>
+
