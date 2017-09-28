@@ -8,7 +8,7 @@ import 'rxjs/add/operator/switchMap';
     styleUrls: ['./heroDetails.component.css']
 })
 
-export default class HeroDetailsComponent implements OnInit {
+export default class HeroDetailsComponent implements OnInit, OnDestroy {
     id: number;
     private sub: any;
 
@@ -22,15 +22,15 @@ export default class HeroDetailsComponent implements OnInit {
         console.log(this.route.paramMap);
         this.sub = this.route.paramMap.subscribe(paramMap => {
 
-            //this.id = +paramMap['id']; // (+) converts string 'id' to a number
-            console.log(paramMap['data']);
+            this.id = +paramMap['id']; // (+) converts string 'id' to a number
+            console.log(paramMap['id']);
             // In a real app: dispatch action to load the details here.
         });
 
 
     }
 
-    // ngOnDestroy() {
-    //     this.sub.unsubscribe();
-    // }
+    ngOnDestroy() {
+        this.sub.unsubscribe();
+    }
 }
