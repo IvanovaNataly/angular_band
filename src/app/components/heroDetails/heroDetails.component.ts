@@ -19,11 +19,11 @@ export default class HeroDetailsComponent implements OnInit {
     }
 
     ngOnInit() {
-        // console.log(this.route.params.value.id);
-        this.sub = this.route.params.subscribe(params => {
-            console.log(this.route.params);
-            //this.id = +params['id']; // (+) converts string 'id' to a number
+        console.log(this.route.paramMap);
+        this.sub = this.route.paramMap.subscribe(paramMap => {
 
+            //this.id = +paramMap['id']; // (+) converts string 'id' to a number
+            console.log(paramMap['data']);
             // In a real app: dispatch action to load the details here.
         });
 

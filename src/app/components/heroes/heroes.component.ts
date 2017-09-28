@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {  ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'heroes-list',
@@ -8,14 +9,29 @@ import { Component } from '@angular/core';
 
 export default class HeroesComponent {
     heroesList: any[];
+    private sub: any;
 
-    constructor() {
+    constructor( private route: ActivatedRoute) {
+
+        console.log("HeroDetailsComponent");
+
         this.heroesList = [
-            {id: 1},
-            {id: 2},
-            {id: 3},
+            {id: 1, name: "SpiderMan"},
+            {id: 2, name: "SuperMan",},
+            {id: 3, name: "Captain America"},
         ];
     }
 
+    ngOnInit() {
+        console.log(this.route.data);
+        this.sub = this.route.data.subscribe(data => {
+
+            //this.id = +paramMap['id']; // (+) converts string 'id' to a number
+            console.log(data['title']);
+            // In a real app: dispatch action to load the details here.
+        });
+
+
+    }
 
 }
